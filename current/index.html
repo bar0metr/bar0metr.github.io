@@ -1,9 +1,28 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GoOS current trust package</title></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GoOS current trust package</title>
+  <style>body{max-width:760px;margin:64px auto;padding:0 20px;font:16px/1.6 system-ui,sans-serif;color:#202124}code{overflow-wrap:anywhere}a{color:#0969da}dt{font-weight:600}dd{margin:0 0 16px}</style>
+</head>
 <body>
   <h1>GoOS current trust package</h1>
-  <p>No production trust package has been published yet.</p>
-  <p>When published, this directory will contain <code>ca-certificates.pem</code>, <code>ca-certificates.json</code>, and <code>ca-certificates.sig</code>.</p>
+  <dl>
+    <dt>Trust sequence</dt><dd>2026101001</dd>
+    <dt>Source</dt><dd>Mozilla-derived curl CA extract, 2026-09-25 03:12:01 UTC</dd>
+    <dt>Roots</dt><dd>121</dd>
+    <dt>PEM bytes</dt><dd>181603</dd>
+    <dt>Bundle SHA-256</dt><dd><code>b5e44e6cf3ec2cda6131fec4e60a358ed022af5d5a8584da589b1851a56d0bb5</code></dd>
+  </dl>
+  <ul>
+    <li><a href="ca-certificates.pem">CA bundle</a></li>
+    <li><a href="ca-certificates.json">Canonical metadata</a></li>
+    <li><a href="ca-certificates.sig">Ed25519 signature</a> (64 raw bytes)</li>
+  </ul>
+  <p>Run <code>trust update</code> on a GoOS image configured with <code>https://bar0metr.github.io/current</code>.</p>
+  <p>GoOS authenticates the package using its immutable update public key. HTTPS protects transport; the Ed25519 signature authorizes the CA update. Trust sequence is independent of the OS release.</p>
+  <p>Public-key SHA-256: <code>30f822ccfd10d2a066d7b781328aeca387d22458f3eb472f1cc2e652f9066f09</code>. This fingerprint is informational; the system image supplies the trusted key.</p>
+  <p>Upstream <a href="https://curl.se/ca/cacert-2026-09-25.pem">dated source</a> and <a href="https://curl.se/docs/caextract.html">extraction documentation</a>. Certificate data license: <a href="../LICENSE-MPL-2.0">MPL 2.0</a>.</p>
 </body>
 </html>
